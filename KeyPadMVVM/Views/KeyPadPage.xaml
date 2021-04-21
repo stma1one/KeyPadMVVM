@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KeyPadMVVM.Views.KeyPadPage">
+             x:Class="KeyPadMVVM.Views.KeyPadPage" Title="Enter Number">
     <ContentPage.Content>
         <Grid HorizontalOptions="Center"
           VerticalOptions="Center">
          
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -19,7 +20,15 @@
                 <ColumnDefinition Width="80" />
                 <ColumnDefinition Width="80" />
             </Grid.ColumnDefinitions>
+           <!-- <Frame Grid.Column="0" Grid.ColumnSpan="2"
+                   OutlineColor="Accent">
+                <Label Text="{Binding DisplayText}" />
+            </Frame>
 
+            <Button Text="&#x21E6;" FontSize="Medium"
+                    Command="{Binding DelCharCommand}"
+                    Grid.Column="2" Grid.ColumnSpan="2"
+                    BorderWidth="0"  /> -->
             <!-- Internal Grid for top row of items -->
             <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
                 <Grid.ColumnDefinitions>
@@ -36,7 +45,7 @@
                     Command="{Binding DelCharCommand}"
                     Grid.Column="1"
                     BorderWidth="0" />
-            </Grid>
+            </Grid> 
 
             <Button Text="1"
                 Command="{Binding AddCharCommand}"
@@ -97,6 +106,7 @@
                 Command="{Binding AddCharCommand}"
                 CommandParameter="#"
                 Grid.Row="4" Grid.Column="2" />
+            <ImageButton Command="{Binding DialCommand}" BackgroundColor="Transparent" Source="telephone.png" Grid.Row="5" Grid.Column="1"  ></ImageButton>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

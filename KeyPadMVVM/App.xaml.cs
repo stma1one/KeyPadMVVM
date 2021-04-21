@@ -10,7 +10,7 @@ namespace KeyPadMVVM
         {
             InitializeComponent();
 
-            MainPage = new KeyPadPage();
+            MainPage = new NavigationPage(new KeyPadPage());
         }
 
         protected override void OnStart()

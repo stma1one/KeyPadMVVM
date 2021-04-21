@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"        
+            xmlns:local="clr-namespace:KeyPadMVVM.ViewModels"
+             x:Class="KeyPadMVVM.Views.DialingPage" Title="Dialing">
+    <ContentPage.BindingContext>
+        <local:DialingPageViewModel></local:DialingPageViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <Frame BackgroundColor="ForestGreen">
+                <Label Text="{Binding DialNumber,StringFormat='Calling {0}'}" FontSize="Medium" TextColor="White" 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" Margin="10" />
+            </Frame>
+            <ImageButton Command="{Binding CancelCommand}" Margin="10" VerticalOptions="EndAndExpand" HorizontalOptions="Center"  BackgroundColor="Transparent" Source="phonecall.png" WidthRequest="80" HeightRequest="80"></ImageButton>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
