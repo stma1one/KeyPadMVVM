@@ -99,12 +99,7 @@ namespace KeyPadMVVM.ViewModels
         }
         public event PropertyChangedEventHandler PropertyChanged;
         #endregion
-        private void AddChar(string obj)
-        {
-            FormattedString += obj;
-            
-
-        }
+      
 
        
         #region events
@@ -120,13 +115,21 @@ namespace KeyPadMVVM.ViewModels
         public ICommand DelCharCommand {  get; set; }//=>new Command(DelChar,CanChange);
 
         public ICommand DialCommand { get; set; }//=> new Command(async () =>
-    //        {
-    //            Page p = new DialingPage
-    //            {
-    //                BindingContext = new DialingPageViewModel() { DialNumber = DisplayText }
-    //            };
-    //    await Application.Current.MainPage.Navigation.PushModalAsync(p);
-    //}, CanChange);
+                                                 //        {
+                                                 //            Page p = new DialingPage
+                                                 //            {
+                                                 //                BindingContext = new DialingPageViewModel() { DialNumber = DisplayText }
+                                                 //            };
+                                                 //    await Application.Current.MainPage.Navigation.PushModalAsync(p);
+                                                 //}, CanChange);
+        #endregion
+        #region Command Functions
+        private void AddChar(string obj)
+        {
+            FormattedString += obj;
+
+
+        }
         private void DelChar()
         {
             FormattedString = FormattedString.Substring(0, FormattedString.Length - 1);
@@ -135,7 +138,7 @@ namespace KeyPadMVVM.ViewModels
         {
             return (FormattedString.Length > 0);
         }
-        #endregion
+      #endregion
 
     }
 }
